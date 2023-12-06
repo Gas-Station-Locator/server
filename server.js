@@ -15,24 +15,6 @@ app.get("/api", (req, res) => {
 
 mongoose.connect(dbURL)
 
-/**
- * 
-var connection = mongoose.connection;
-
-connection.on('error', console.error.bind(console, 'connection error:'));
-connection.once('open', async function () {
-
-  const collection  = connection.db.collection("testPrices");
-  collection.find({}).toArray(function(err, data){
-      console.log(data); // it will print your collection data
-  });
-
-});
- */
-
-// coll = StationModel.db['testPrices'];
-/**
- */
 app.get('/getStations', (req, res) =>{
   StationModel.find()
   .then(stations => res.json(stations))
